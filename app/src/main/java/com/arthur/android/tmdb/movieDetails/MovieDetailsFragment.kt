@@ -30,7 +30,7 @@ class MovieDetailsFragment : Fragment() {
             viewModel = movieDetailsViewModel.apply {
                 movieId.value = getMovieId()
             }
-            setLifecycleOwner(this@MovieDetailsFragment)
+            lifecycleOwner = this@MovieDetailsFragment
         }?.root
         val toolbar = activity?.findViewById(R.id.toolbar_main) as? Toolbar
         toolbar?.visibility = GONE

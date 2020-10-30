@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.arthur.android.tmdb.R
@@ -30,8 +31,10 @@ class ListMoviesFragment : Fragment() {
         activityMainBinding?.run {
             this.viewModel = listMoviesViewModel
             initRecycler(activityMainBinding)
-            setLifecycleOwner(this@ListMoviesFragment)
+            lifecycleOwner = this@ListMoviesFragment
         }
+        val toolbar = activity?.findViewById(R.id.toolbar_main) as? Toolbar
+        toolbar?.visibility = View.VISIBLE
 
         return view
     }

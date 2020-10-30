@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var binding: ActivityMainBinding? = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val binding: ActivityMainBinding? = DataBindingUtil.setContentView(this, R.layout.activity_main)
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
         searchView?.setOnSearchClickListener {
